@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react'
-import { supabase } from '../services/supabase'
+import { supabase, isSupabaseConfigured } from '../services/supabase'
 
 const AuthContext = createContext(null)
 
@@ -8,21 +8,31 @@ export function AuthProvider({ children }) {
   const [session, setSession] = useState(null)
   const [loading, setLoading] = useState(true)
 
-  // On mount, hydrate session from Supabase and listen for changes
+  // On mount, hydrate session from Supabase if configured
   useEffect(() => {
-    supabase.auth.getSession().then(({ data: { session } }) => {
+    if (!isSupabaseConfigured) {
+      setLoading(false)
+      return
+    }
+
+    supabase.auth
+      .getSession()
+      .then(({ data: { session } }) => {
+        setSession(session)
+        setUser(session?.user ?? null)
+        setLoading(false)
+      })
+      .catch(() => {
+        setLoading(false)
+      })
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
       setSession(session)
       setUser(session?.user ?? null)
       setLoading(false)
     })
-
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      (_event, session) => {
-        setSession(session)
-        setUser(session?.user ?? null)
-        setLoading(false)
-      }
-    )
 
     return () => subscription.unsubscribe()
   }, [])
@@ -32,6 +42,13 @@ export function AuthProvider({ children }) {
   const signUp = useCallback(async (email, password, fullName) => {
     setLoading(true)
     try {
+      if (!isSupabaseConfigured) {
+        // Fallback simulation for preview
+        const dummyUser = { id: 'demo-user', email, user_metadata: { full_name: fullName } }
+        setUser(dummyUser)
+        return { data: { user: dummyUser }, error: null }
+      }
+
       const { data, error } = await supabase.auth.signUp({
         email,
         password,
@@ -41,7 +58,6 @@ export function AuthProvider({ children }) {
       })
       if (error) throw error
 
-      // Create user profile row
       if (data.user) {
         await supabase.from('user_profiles').upsert({
           id: data.user.id,
@@ -58,6 +74,12 @@ export function AuthProvider({ children }) {
   const signIn = useCallback(async (email, password) => {
     setLoading(true)
     try {
+      if (!isSupabaseConfigured) {
+        const dummyUser = { id: 'demo-user', email, user_metadata: { full_name: 'Demo Customer' } }
+        setUser(dummyUser)
+        return { data: { user: dummyUser }, error: null }
+      }
+
       const { data, error } = await supabase.auth.signInWithPassword({
         email,
         password,
@@ -72,14 +94,18 @@ export function AuthProvider({ children }) {
   const signOut = useCallback(async () => {
     setLoading(true)
     try {
-      const { error } = await supabase.auth.signOut()
-      if (error) throw error
+      if (isSupabaseConfigured) {
+        await supabase.auth.signOut()
+      }
+      setUser(null)
+      setSession(null)
     } finally {
       setLoading(false)
     }
   }, [])
 
   const resetPassword = useCallback(async (email) => {
+    if (!isSupabaseConfigured) return { data: null, error: null }
     const { data, error } = await supabase.auth.resetPasswordForEmail(email, {
       redirectTo: `${window.location.origin}/account?reset=true`,
     })
@@ -87,10 +113,9 @@ export function AuthProvider({ children }) {
     return data
   }, [])
 
-  // ─── Profile helpers ────────────────────────────────────────────────────────
-
   const getProfile = useCallback(async () => {
     if (!user) return null
+    if (!isSupabaseConfigured) return user
     const { data, error } = await supabase
       .from('user_profiles')
       .select('*')
@@ -101,11 +126,13 @@ export function AuthProvider({ children }) {
   }, [user])
 
   const updateProfile = useCallback(
-    async (profileData) => {
-      if (!user) throw new Error('Not authenticated')
+    async (updates) => {
+      if (!user) return null
+      if (!isSupabaseConfigured) return updates
       const { data, error } = await supabase
         .from('user_profiles')
-        .upsert({ id: user.id, ...profileData, updated_at: new Date().toISOString() })
+        .update(updates)
+        .eq('id', user.id)
         .select()
         .single()
       if (error) throw error
@@ -118,13 +145,13 @@ export function AuthProvider({ children }) {
     user,
     session,
     loading,
-    isAuthenticated: !!user,
     signUp,
     signIn,
     signOut,
     resetPassword,
     getProfile,
     updateProfile,
+    isSupabaseConfigured,
   }
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>
@@ -137,5 +164,3 @@ export function useAuth() {
   }
   return context
 }
-
-export default AuthContext
