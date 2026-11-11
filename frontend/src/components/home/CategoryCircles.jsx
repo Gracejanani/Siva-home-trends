@@ -3,52 +3,52 @@ import { Link } from 'react-router-dom'
 
 const CATEGORIES = [
   {
-    name: 'Bangles',
-    slug: 'bangles',
-    image: 'https://images.unsplash.com/photo-1611591475844-030999553642?auto=format&fit=crop&w=400&q=80',
-    count: '24+ Items',
-  },
-  {
-    name: 'Earrings',
-    slug: 'earrings',
-    image: 'https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=400&q=80',
-    count: '48+ Items',
-  },
-  {
-    name: 'Haram',
-    slug: 'haram',
-    image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=400&q=80',
-    count: '18+ Items',
-  },
-  {
-    name: 'Necklace',
-    slug: 'necklace',
-    image: 'https://images.unsplash.com/photo-1599643477877-530eb83abc8e?auto=format&fit=crop&w=400&q=80',
-    count: '32+ Items',
-  },
-  {
-    name: 'Pendent',
-    slug: 'pendent',
-    image: 'https://images.unsplash.com/photo-1602751584552-8ba73aad10e1?auto=format&fit=crop&w=400&q=80',
-    count: '15+ Items',
+    name: 'Pure Silk',
+    slug: 'pure-silk-saree',
+    image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=400&q=80',
+    count: '85+ Sarees',
   },
   {
     name: 'Kanchi Cotton',
     slug: 'kanchi-cotton-saree',
     image: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=400&q=80',
-    count: '60+ Items',
+    count: '60+ Sarees',
   },
   {
-    name: 'Pure Silk',
-    slug: 'pure-silk-saree',
+    name: 'Soft Silk',
+    slug: 'soft-silk-saree',
     image: 'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=400&q=80',
-    count: '85+ Items',
+    count: '45+ Sarees',
+  },
+  {
+    name: 'Wedding Silk',
+    slug: 'wedding-saree',
+    image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=400&q=80',
+    count: '30+ Sarees',
+  },
+  {
+    name: 'Tissue Saree',
+    slug: 'tissue-saree',
+    image: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=400&q=80',
+    count: '25+ Sarees',
   },
   {
     name: 'Semi Silk',
     slug: 'semi-silk-saree',
+    image: 'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=400&q=80',
+    count: '40+ Sarees',
+  },
+  {
+    name: 'Fancy Saree',
+    slug: 'fancy-saree',
     image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=400&q=80',
-    count: '40+ Items',
+    count: '35+ Sarees',
+  },
+  {
+    name: 'Chettinad Cotton',
+    slug: 'chettinad-cotton',
+    image: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=400&q=80',
+    count: '28+ Sarees',
   },
 ]
 
@@ -57,7 +57,7 @@ export default function CategoryCircles() {
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="font-heading text-3xl sm:text-4xl text-brand-dark font-semibold">
-          Shop by Categories
+          Shop by Saree Categories
         </h2>
         <div className="flex items-center justify-center gap-2 mt-2">
           <span className="h-0.5 w-12 bg-gold/50" />
@@ -65,7 +65,7 @@ export default function CategoryCircles() {
           <span className="h-0.5 w-12 bg-gold/50" />
         </div>
         <p className="text-brand-muted text-sm mt-2">
-          Explore our wide range of traditional ethnic collections
+          Discover our wide variety of authentic South Indian handloom sarees
         </p>
 
         {/* Circular category grid */}

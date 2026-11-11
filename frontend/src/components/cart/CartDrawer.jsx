@@ -47,7 +47,7 @@ export default function CartDrawer({ isOpen, onClose }) {
                   Your cart is empty
                 </h4>
                 <p className="text-brand-muted text-sm max-w-xs mb-6">
-                  Looks like you haven’t added any sarees or jewellery to your cart yet.
+                  Looks like you haven't added any sarees to your cart yet.
                 </p>
                 <button
                   onClick={onClose}

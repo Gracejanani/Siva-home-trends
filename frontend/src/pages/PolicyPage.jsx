@@ -8,7 +8,7 @@ const POLICIES = {
       <>
         <p>Welcome to SJ Sri Jananin Saree. By accessing and purchasing from our website (jewellery1.premiumweb.in) or our offline boutique in Salem, Tamil Nadu, you agree to be bound by the following terms and conditions.</p>
         <h3>1. Product Authenticity & Color Variations</h3>
-        <p>All our silk sarees and temple jewellery collections are genuine handloom and handcrafted pieces. Slight variations in color shade or zari reflection may occur between digital photographs and the physical weave due to digital screen lighting.</p>
+        <p>All our pure silk and cotton sarees are genuine handloom and handcrafted pieces. Slight variations in color shade or zari reflection may occur between digital photographs and the physical weave due to digital screen lighting.</p>
         <h3>2. Pricing & Orders</h3>
         <p>Prices are listed in Indian Rupees (INR) and are inclusive of standard taxes. Shipping charges may apply depending on your order total and delivery pincode.</p>
         <h3>3. Governing Law</h3>
@@ -55,7 +55,7 @@ const POLICIES = {
         <h3>7-Day Return Guarantee</h3>
         <p>You may initiate a return or exchange within 7 days from the date of package delivery. Items must be unused, unwashed, and in their original packaging with all security tags attached.</p>
         <h3>Refund Processing</h3>
-        <p>Once we receive and inspect the returned saree or jewellery, your refund will be credited to your original payment method or bank account within 2-4 business days.</p>
+        <p>Once we receive and inspect the returned saree, your refund will be credited to your original payment method or bank account within 2-4 business days.</p>
       </>
     ),
   },

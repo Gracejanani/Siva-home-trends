@@ -33,7 +33,7 @@ export default function Contact() {
           Contact SJ Sri Jananin Saree
         </h1>
         <p className="text-white/80 text-sm max-w-lg mx-auto">
-          Have queries about saree colors, temple jewellery availability, or bridal orders? Reach out to our Salem team.
+          Have queries about saree colors, fabric details, or bridal wedding orders? Reach out to our Salem team.
         </p>
       </div>
 
@@ -155,7 +155,7 @@ export default function Contact() {
                   required
                   value={form.message}
                   onChange={(e) => setForm({ ...form, message: e.target.value })}
-                  placeholder="Tell us about the sarees or jewellery you are looking for..."
+                  placeholder="Tell us about the sarees or wedding orders you are looking for..."
                   className="w-full text-sm p-3 border border-brand-border rounded-xl focus:outline-none focus:border-primary"
                 />
               </div>

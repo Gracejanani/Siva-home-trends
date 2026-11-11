@@ -20,7 +20,7 @@ export default function Wishlist() {
           Your Wishlist is Empty
         </h2>
         <p className="text-brand-muted text-sm max-w-sm mb-8">
-          Explore our sarees and temple jewellery collections and save your favorite pieces here.
+          Explore our handcrafted traditional saree collections and save your favorite pieces here.
         </p>
         <Link to="/shop" className="btn-primary">
           Explore Boutique

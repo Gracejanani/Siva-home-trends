@@ -60,7 +60,7 @@ export default function AuthModal({ isOpen, onClose }) {
               SJ Sri Jananin Saree
             </span>
             <p className="text-xs text-brand-muted mt-1 uppercase tracking-wider">
-              Traditional Sarees & Jewellery
+              Traditional Handloom Sarees
             </p>
           </div>
 

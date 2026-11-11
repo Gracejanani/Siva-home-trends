@@ -291,12 +291,12 @@ export default function ProductDetail() {
           <div className="max-w-3xl mx-auto py-8 text-sm text-brand-body leading-relaxed">
             {activeTab === 'description' && (
               <div className="space-y-4">
-                <p>{product.description || product.short_description || 'Authentic traditional Indian wear woven with the finest quality threads, traditional zari patterns, and temple jewellery designs inspired by Tamil heritage.'}</p>
+                <p>{product.description || product.short_description || 'Authentic traditional South Indian saree woven with the finest quality pure silk and cotton threads, traditional golden zari patterns, and heritage motifs inspired by Tamil handloom.'}</p>
                 <h4 className="font-heading text-lg font-semibold text-brand-dark pt-2">Product Highlights:</h4>
                 <ul className="list-disc pl-5 space-y-1">
-                  <li>Premium handpicked materials and durable gold finish</li>
+                  <li>Premium handpicked natural silk and cotton fibers</li>
                   <li>Intricate traditional motifs designed for auspicious ceremonies</li>
-                  <li>Comfortable drape and skin-friendly hypoallergenic ornament material</li>
+                  <li>Comfortable fluid drape, skin-friendly soft feel, and breathable weave</li>
                   <li>Comes in official SJ Sri Jananin Saree luxury packaging box</li>
                 </ul>
               </div>

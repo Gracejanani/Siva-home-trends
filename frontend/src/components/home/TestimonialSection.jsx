@@ -13,7 +13,7 @@ const REVIEWS = [
     name: 'Ananya Ramesh',
     location: 'Bangalore, Karnataka',
     rating: 5,
-    text: 'Purchased the Temple Haram and matching bangles. The gold polish is stunning and does not fade. The packaging in the velvet box was so royal!',
+    text: 'Purchased the Pure Kanchipuram wedding silk saree. The rich golden zari pallu and soft pure silk drape looked breathtaking on my daughter’s wedding day!',
     date: '1 week ago',
   },
   {

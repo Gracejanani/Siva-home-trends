@@ -15,7 +15,7 @@ export default function Layout() {
 
       {/* Floating WhatsApp Chat Button */}
       <a
-        href="https://wa.me/919025574074?text=Hi%2C%20I%20am%20interested%20in%20your%20sarees%20and%20jewellery%20collection."
+        href="https://wa.me/919025574074?text=Hi%2C%20I%20am%20interested%20in%20your%20saree%20collection."
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Chat on WhatsApp"

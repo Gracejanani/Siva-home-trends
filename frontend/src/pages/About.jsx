@@ -16,7 +16,7 @@ export default function About() {
             About Us
           </h1>
           <p className="text-white/80 text-sm md:text-base max-w-xl mx-auto">
-            Bringing timeless South Indian silk traditions and divine temple jewellery to your auspicious celebrations.
+            Bringing timeless South Indian handloom silk and cotton saree traditions to your auspicious celebrations.
           </p>
         </div>
       </div>
@@ -40,18 +40,18 @@ export default function About() {
                 Your Style, Your Beauty, Your Boutique
               </span>
               <h2 className="font-heading text-3xl sm:text-4xl text-brand-dark font-semibold leading-tight">
-                “Celebrate Every Moment with Beautiful Sarees and Elegant Jewellery.”
+                “Celebrate Every Moment with Beautiful Handcrafted Sarees.”
               </h2>
               <p className="text-brand-body text-sm md:text-base leading-relaxed">
-                SJ Sri Jananin Saree brings you a beautiful collection of sarees and jewellery to make every occasion special. From traditional sarees to stylish designs, we offer choices for weddings, festivals, family functions, and everyday wear.
+                SJ Sri Jananin Saree brings you an exquisite collection of handloom sarees to make every occasion special. From traditional bridal Kanchipuram silk to breathable daily Kanchi cottons, we offer choices for weddings, festivals, family functions, and everyday wear.
               </p>
               <p className="text-brand-body text-sm md:text-base leading-relaxed">
-                Rooted in Dadagapatti, Salem, we work directly with experienced master weavers from Kanchipuram, Arani, and Salem to craft genuine pure silks, cottons, and temple ornaments that preserve our rich cultural roots.
+                Rooted in Dadagapatti, Salem, we work directly with experienced master weavers from Kanchipuram, Arani, and Salem to craft genuine pure silks, soft silks, and cottons that preserve our rich cultural roots.
               </p>
 
               <div className="pt-2">
                 <Link to="/shop" className="btn-primary">
-                  Explore Our Boutique
+                  Explore Saree Collections
                 </Link>
               </div>
             </div>
@@ -80,10 +80,10 @@ export default function About() {
                 <Sparkles size={28} />
               </div>
               <h3 className="font-heading text-xl font-semibold text-brand-dark">
-                Elegant Designs
+                Authentic Weaves
               </h3>
               <p className="text-xs text-brand-muted leading-relaxed">
-                Contemporary styling blended with authentic South Indian heritage motifs.
+                Pure mulberry silk, natural cotton threads, and traditional South Indian motifs.
               </p>
             </div>
 
@@ -92,10 +92,10 @@ export default function About() {
                 <Award size={28} />
               </div>
               <h3 className="font-heading text-xl font-semibold text-brand-dark">
-                Premium Quality
+                Silk-Mark Certified
               </h3>
               <p className="text-xs text-brand-muted leading-relaxed">
-                Silk-mark certified threads and anti-tarnish hallmarked temple gold finish.
+                100% genuine pure silk certified quality with real zari borders.
               </p>
             </div>
 
@@ -104,10 +104,10 @@ export default function About() {
                 <ShieldCheck size={28} />
               </div>
               <h3 className="font-heading text-xl font-semibold text-brand-dark">
-                Affordable Prices
+                Weaver-Direct Prices
               </h3>
               <p className="text-xs text-brand-muted leading-relaxed">
-                Direct weaver-to-door pricing without retail middleman commissions.
+                Direct handloom-to-doorstep pricing with no retail middleman markups.
               </p>
             </div>
 
@@ -119,7 +119,7 @@ export default function About() {
                 Trusted Service
               </h3>
               <p className="text-xs text-brand-muted leading-relaxed">
-                Over 8,000+ satisfied brides, families, and global retail shoppers.
+                Over 8,000+ satisfied brides and families across South India and worldwide.
               </p>
             </div>
           </div>
@@ -131,7 +131,7 @@ export default function About() {
         <div className="max-w-4xl mx-auto px-4 text-center space-y-4">
           <MapPin size={32} className="mx-auto text-gold" />
           <h3 className="font-heading text-3xl font-semibold">
-            Visit Our Boutique in Salem
+            Visit Our Saree Boutique in Salem
           </h3>
           <p className="text-sm text-white/80 max-w-lg mx-auto">
             Thirunjanam nagar 5rd, Cross Dadagapatti, Salem - 636006, Tamil Nadu

@@ -22,7 +22,7 @@ export default function ExclusiveBanner() {
         </h2>
 
         <p className="font-body text-lg md:text-xl text-white/90 font-light max-w-2xl mx-auto mb-8 leading-relaxed">
-          Elegance woven into tradition. Adorn your celebratory moments with handcrafted South Indian heritage silks and temple gold jewellery.
+          Elegance woven into tradition. Adorn your celebratory moments with handcrafted South Indian pure heritage silks and handwoven cotton sarees.
         </p>
 
         <div className="flex flex-wrap items-center justify-center gap-4">

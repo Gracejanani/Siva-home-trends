@@ -21,11 +21,12 @@ const NAV_LINKS = [
     label: 'Shop',
     to: '/shop',
     children: [
-      { label: 'All Products', to: '/shop' },
-      { label: 'Silk Sarees', to: '/shop/silk-sarees' },
-      { label: 'Cotton Sarees', to: '/shop/cotton-sarees' },
-      { label: 'Designer Sarees', to: '/shop/designer-sarees' },
-      { label: 'Jewellery', to: '/shop/jewellery' },
+      { label: 'All Sarees', to: '/shop' },
+      { label: 'Pure Silk Sarees', to: '/shop/pure-silk-saree' },
+      { label: 'Kanchi Cotton Sarees', to: '/shop/kanchi-cotton-saree' },
+      { label: 'Soft Silk Sarees', to: '/shop/soft-silk-saree' },
+      { label: 'Wedding & Bridal Silk', to: '/shop/wedding-saree' },
+      { label: 'Tissue Sarees', to: '/shop/tissue-saree' },
       { label: 'New Arrivals', to: '/shop/new-arrivals' },
     ],
   },
@@ -137,7 +138,7 @@ export default function Header() {
                 SJ Sri Jananin
               </span>
               <span className="font-body text-xs text-gold tracking-widest uppercase">
-                Saree & Jewellery
+                Exclusive Sarees
               </span>
             </Link>
 
@@ -205,7 +206,7 @@ export default function Header() {
                         <input
                           autoFocus
                           type="text"
-                          placeholder="Search sarees, jewellery..."
+                          placeholder="Search pure silk, kanchi cotton sarees..."
                           value={searchQuery}
                           onChange={(e) => setSearchQuery(e.target.value)}
                           className="flex-1 outline-none font-body text-sm text-brand-dark placeholder-brand-muted"

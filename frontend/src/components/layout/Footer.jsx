@@ -82,7 +82,7 @@ const Footer = () => {
                   Sri Jananin Saree
                 </h3>
                 <p className="text-white/75 text-sm font-body leading-relaxed mb-4">
-                  SJ Sri Jananin Saree brings you a beautiful collection of sarees and jewellery to make every occasion special and memorable.
+                  SJ Sri Jananin Saree brings you an exquisite collection of pure silk, Kanchi cotton, and bridal sarees handwoven for every celebration.
                 </p>
                 {/* Social Icons */}
                 <div className="flex items-center justify-center gap-2 flex-wrap">
@@ -121,18 +121,18 @@ const Footer = () => {
               </ul>
             </div>
 
-            {/* Our Shop */}
+            {/* Saree Collections */}
             <div>
               <h4 className="font-heading text-lg font-semibold text-white mb-4 pb-2 border-b border-white/20">
-                Our Shop
+                Saree Collections
               </h4>
               <ul className="space-y-2.5">
                 {[
-                  { label: 'Jewellery', to: '/shop/jewellery' },
-                  { label: 'Bangles', to: '/shop/bangles' },
-                  { label: 'Earrings', to: '/shop/earrings' },
-                  { label: 'Haram', to: '/shop/haram' },
-                  { label: 'Necklace', to: '/shop/necklace' },
+                  { label: 'Pure Silk Sarees', to: '/shop/pure-silk-saree' },
+                  { label: 'Kanchi Cotton Sarees', to: '/shop/kanchi-cotton-saree' },
+                  { label: 'Soft Silk Sarees', to: '/shop/soft-silk-saree' },
+                  { label: 'Wedding & Bridal Silk', to: '/shop/wedding-saree' },
+                  { label: 'Tissue Sarees', to: '/shop/tissue-saree' },
                 ].map((link) => (
                   <li key={link.to}>
                     <Link

@@ -6,29 +6,29 @@ const SLIDES = [
   {
     id: 1,
     image: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1920&q=80',
-    tagline: 'TRADITIONAL SAREES & JEWELLERY',
-    title: 'Grace in Every Thread & Shine',
-    subtitle: 'Explore authentic designs crafted for life’s brightest celebrations.',
-    cta: 'Explore Collections',
+    tagline: 'TRADITIONAL HANDWOVEN SAREES',
+    title: 'Grace in Every Thread & Weave',
+    subtitle: 'Explore authentic silk and cotton sarees crafted for life’s brightest celebrations.',
+    cta: 'Explore Sarees',
     link: '/shop',
   },
   {
     id: 2,
-    image: 'https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1920&q=80',
-    tagline: 'HANDPICKED HERITAGE CRAFT',
-    title: 'Bridal Opulence & Temple Gold',
-    subtitle: 'Intricate necklaces, bangles and haram designed for eternal royalty.',
-    cta: 'Shop Jewellery',
-    link: '/shop/jewellery',
+    image: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=1920&q=80',
+    tagline: 'PURE KANCHIPURAM SILK',
+    title: 'Bridal Opulence & Gold Zari Pattu',
+    subtitle: 'Heirloom pure silk wedding sarees woven with rich gold zari for timeless auspicious moments.',
+    cta: 'Shop Bridal Silk',
+    link: '/shop/wedding-saree',
   },
   {
     id: 3,
     image: 'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=1920&q=80',
-    tagline: 'PURE SILK & KANCHI WEAVES',
-    title: 'Woven Stories of Pure Silk',
-    subtitle: 'Vibrant colors, zari borders and pure silk handwoven to perfection.',
-    cta: 'Discover Sarees',
-    link: '/shop/sarees',
+    tagline: 'HANDLOOM KANCHI COTTON',
+    title: 'Breathable Grace for Every Day',
+    subtitle: 'Vibrant natural dyes, temple borders, and comfortable pure cotton handloom crafted in Tamil Nadu.',
+    cta: 'Shop Cotton Sarees',
+    link: '/shop/kanchi-cotton-saree',
   },
 ]
 
@@ -86,7 +86,7 @@ export default function HeroSlider() {
                 to="/about"
                 className="border-2 border-white/80 hover:border-gold hover:text-gold text-white px-8 py-3.5 rounded-full font-body font-medium transition-all duration-300 backdrop-blur-sm"
               >
-                Our Story
+                Our Weavers
               </Link>
             </div>
           </div>
