@@ -1,14 +1,19 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
-  html { scroll-behavior: smooth; }
+  html {
+    scroll-behavior: smooth;
+  }
+
   body {
     font-family: 'Jost', sans-serif;
     color: #4a4a4a;
     background-color: #ffffff;
   }
+
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Cormorant Garamond', serif;
     color: #242424;
@@ -19,37 +24,60 @@
   .btn-primary {
     @apply bg-primary text-white px-6 py-3 rounded-full font-body font-medium hover:bg-primary-hover transition-all duration-300 inline-flex items-center gap-2;
   }
+
   .btn-outline {
     @apply border-2 border-primary text-primary px-6 py-3 rounded-full font-body font-medium hover:bg-primary hover:text-white transition-all duration-300 inline-flex items-center gap-2;
   }
+
   .btn-gold {
     @apply bg-gold text-white px-6 py-3 rounded-full font-body font-medium hover:bg-gold-dark transition-all duration-300 inline-flex items-center gap-2;
   }
+
   .section-heading {
     @apply font-heading text-3xl md:text-4xl text-brand-dark font-semibold text-center;
   }
+
   .section-subheading {
     @apply font-body text-brand-muted text-center mt-2 text-sm uppercase tracking-widest;
   }
+
   .product-card {
-    @apply bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 group;
+    @apply bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300;
   }
+
   .price-sale {
     @apply text-primary font-body font-semibold text-lg;
   }
+
   .price-original {
     @apply text-brand-muted line-through text-sm font-body ml-2;
   }
+
   .badge-sale {
     @apply absolute top-2 left-2 bg-primary text-white text-xs font-body font-semibold px-2 py-1 rounded-full z-10;
   }
 }
 
 /* Swiper customization */
-.swiper-pagination-bullet-active { background: #c4005b !important; }
-.swiper-button-next, .swiper-button-prev { color: #c4005b !important; }
+.swiper-pagination-bullet-active {
+  background: #c4005b !important;
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: #c4005b !important;
+}
 
 /* Custom scrollbar */
-::-webkit-scrollbar { width: 6px; }
-::-webkit-scrollbar-track { background: #f1f1f1; }
-::-webkit-scrollbar-thumb { background: #c4005b; border-radius: 3px; }
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c4005b;
+  border-radius: 3px;
+}
