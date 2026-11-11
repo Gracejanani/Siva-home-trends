@@ -1,4 +1,3 @@
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -14,7 +13,12 @@
     background-color: #ffffff;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: 'Cormorant Garamond', serif;
     color: #242424;
   }
@@ -41,9 +45,9 @@
     @apply font-body text-brand-muted text-center mt-2 text-sm uppercase tracking-widest;
   }
 
-  .product-card {
-    @apply bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300;
-  }
+.product-card {
+  @apply bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-all duration-300;
+}
 
   .price-sale {
     @apply text-primary font-body font-semibold text-lg;
