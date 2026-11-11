@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { useParams, Link } from 'react-router-dom'
 import {
   Heart,
-  ShoppingBag,
   Star,
   Truck,
   RotateCcw,
@@ -12,7 +11,6 @@ import {
   Share2,
 } from 'lucide-react'
 import { getProductById, getRelatedProducts } from '../services/api'
-import { useCart } from '../context/CartContext'
 import { useWishlist } from '../context/WishlistContext'
 import ProductImageGallery from '../components/products/ProductImageGallery'
 import ProductSlider from '../components/products/ProductSlider'
@@ -22,7 +20,6 @@ import { toast } from 'react-hot-toast'
 
 export default function ProductDetail() {
   const { slug } = useParams()
-  const { addToCart } = useCart()
   const { toggleWishlist, isInWishlist } = useWishlist()
 
   const [product, setProduct] = useState(null)
@@ -85,9 +82,12 @@ export default function ProductDetail() {
   const originalPrice = selectedVariation?.price || product.price
   const isWishlisted = isInWishlist(product.id)
 
-  const handleAddToCart = () => {
-    addToCart(product, selectedVariation, quantity)
-    toast.success(`Added ${quantity} item(s) to your cart!`)
+  const handleWhatsAppOrder = () => {
+    const currentUrl = typeof window !== 'undefined' ? window.location.href : `https://siva-home-trends.vercel.app/product/${product.slug || product.id}`
+    const colorInfo = selectedVariation?.color ? `• Color: ${selectedVariation.color}\n` : ''
+    const message = `Hello SJ Sri Jananin Saree,\n\nI want to order this saree:\n• Product: ${product.name}\n${colorInfo}• Price: ${formatPrice(currentPrice)}\n• Quantity: ${quantity}\n• Product Link: ${currentUrl}\n\nPlease confirm availability and dispatch details.`
+    const waUrl = `https://wa.me/919025574074?text=${encodeURIComponent(message)}`
+    window.open(waUrl, '_blank')
   }
 
   return (
@@ -110,6 +110,7 @@ export default function ProductDetail() {
             <ProductImageGallery
               images={product.images}
               productName={product.name}
+              selectedImage={selectedVariation?.image_url}
             />
           </div>
 
@@ -196,31 +197,35 @@ export default function ProductDetail() {
               </div>
             )}
 
-            {/* Quantity and Actions */}
+            {/* Quantity and WhatsApp Order Button */}
             <div className="space-y-4 mb-8">
-              <div className="flex items-center gap-4">
-                <div className="flex items-center border border-brand-border rounded-xl overflow-hidden">
+              <div className="flex items-center gap-3 sm:gap-4">
+                <div className="flex items-center border border-brand-border rounded-xl overflow-hidden bg-gray-50/50">
                   <button
                     onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                    className="px-4 py-3 hover:bg-gray-100 font-semibold text-brand-dark"
+                    className="px-3.5 py-3 hover:bg-gray-100 font-semibold text-brand-dark transition-colors"
+                    aria-label="Decrease quantity"
                   >
                     -
                   </button>
-                  <span className="px-5 py-3 font-medium text-sm">{quantity}</span>
+                  <span className="px-4 py-3 font-bold text-sm min-w-[2.5rem] text-center">{quantity}</span>
                   <button
                     onClick={() => setQuantity(quantity + 1)}
-                    className="px-4 py-3 hover:bg-gray-100 font-semibold text-brand-dark"
+                    className="px-3.5 py-3 hover:bg-gray-100 font-semibold text-brand-dark transition-colors"
+                    aria-label="Increase quantity"
                   >
                     +
                   </button>
                 </div>
 
                 <button
-                  onClick={handleAddToCart}
-                  className="flex-1 bg-primary hover:bg-primary-hover text-white py-3.5 px-6 rounded-xl font-medium text-sm flex items-center justify-center gap-2 shadow-lg shadow-primary/25 transition-all hover:scale-[1.02]"
+                  onClick={handleWhatsAppOrder}
+                  className="flex-1 bg-[#25D366] hover:bg-[#20ba59] active:scale-[0.98] text-white py-3.5 px-6 rounded-xl font-semibold text-base flex items-center justify-center gap-2.5 shadow-lg shadow-emerald-500/25 transition-all"
                 >
-                  <ShoppingBag size={18} />
-                  <span>Add To Cart</span>
+                  <svg className="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24">
+                    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                  </svg>
+                  <span>Order on WhatsApp</span>
                 </button>
 
                 <button
