@@ -85,6 +85,16 @@ export async function getBestSellers() {
   }
 }
 
+export async function getRelatedProducts(id) {
+  try {
+    const response = await api.get(`/products/${id}/related`)
+    return response.data
+  } catch (error) {
+    console.error('getRelatedProducts error:', error.message)
+    return []
+  }
+}
+
 export async function searchProducts(query) {
   try {
     const response = await api.get('/products/search', { params: { q: query } })
