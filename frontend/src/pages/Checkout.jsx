@@ -105,7 +105,7 @@ export default function Checkout() {
           Thank You for Your Order!
         </h1>
         <p className="text-brand-muted text-sm max-w-md mb-4">
-          Your order has been placed with SJ Sri Jananin Saree. We will send an SMS and WhatsApp confirmation with the tracking details once dispatched.
+          Your order has been placed with Siva Home Trends. We will send an SMS and WhatsApp confirmation with the tracking details once dispatched.
         </p>
         <div className="bg-primary-light p-4 rounded-xl mb-8 border border-brand-border/60">
           <span className="text-xs text-brand-muted uppercase tracking-wider block">

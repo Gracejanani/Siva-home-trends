@@ -6,7 +6,7 @@ const REVIEWS = [
     name: 'Priya Sundaram',
     location: 'Chennai, Tamil Nadu',
     rating: 5,
-    text: 'The Kanchi cotton saree I ordered arrived in just 2 days. The colour combination and zari finish exceeded my expectations! Highly recommend SJ Sri Jananin Saree for weddings and family functions.',
+    text: 'The Kanchi cotton saree I ordered arrived in just 2 days. The colour combination and zari finish exceeded my expectations! Highly recommend Siva Home Trends for weddings and family functions.',
     date: '3 days ago',
   },
   {

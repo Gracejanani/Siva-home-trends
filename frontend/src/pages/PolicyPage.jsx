@@ -6,7 +6,7 @@ const POLICIES = {
     updated: 'November 2026',
     content: (
       <>
-        <p>Welcome to SJ Sri Jananin Saree. By accessing and purchasing from our website (jewellery1.premiumweb.in) or our offline boutique in Salem, Tamil Nadu, you agree to be bound by the following terms and conditions.</p>
+        <p>Welcome to Siva Home Trends. By accessing and purchasing from our boutique or website, you agree to be bound by the following terms and conditions.</p>
         <h3>1. Product Authenticity & Color Variations</h3>
         <p>All our pure silk and cotton sarees are genuine handloom and handcrafted pieces. Slight variations in color shade or zari reflection may occur between digital photographs and the physical weave due to digital screen lighting.</p>
         <h3>2. Pricing & Orders</h3>
@@ -21,7 +21,7 @@ const POLICIES = {
     updated: 'November 2026',
     content: (
       <>
-        <p>At SJ Sri Jananin Saree, we respect your privacy and protect your personal identification data.</p>
+        <p>At Siva Home Trends, we respect your privacy and protect your personal identification data.</p>
         <h3>Information We Collect</h3>
         <p>When you place an order or contact us, we collect your name, phone number, delivery address, and email to process shipments and send tracking notifications via SMS/WhatsApp.</p>
         <h3>Payment Security</h3>
@@ -64,7 +64,7 @@ const POLICIES = {
     updated: 'November 2026',
     content: (
       <>
-        <p>You can cancel your order prior to dispatch by messaging our customer support team directly at <strong>+91 90255 74074</strong> with your order reference number.</p>
+        <p>You can cancel your order prior to dispatch by messaging our customer support team directly at <strong>+91 9488551771</strong> with your order reference number.</p>
         <p>Once the parcel has been picked up by our courier partners, cancellation is not possible; you may instead request a return after delivery.</p>
       </>
     ),

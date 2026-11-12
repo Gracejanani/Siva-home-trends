@@ -1,6 +1,6 @@
-# SJ Sri Jananin Saree - Full Stack E-Commerce Platform
+# Siva Home Trends - Full Stack E-Commerce Platform
 
-A production-ready full-stack replica of **[SJ Sri Jananin Saree](https://jewellery1.premiumweb.in/)**, built with modern web technologies:
+A production-ready full-stack e-commerce boutique for **[Siva Home Trends](https://siva-home-trends.vercel.app/)**, built with modern web technologies:
 
 - **Frontend**: React 18, Vite, Tailwind CSS, Lucide Icons, Swiper
 - **Backend**: Node.js, Express.js, CORS, Helmet
@@ -59,7 +59,8 @@ jewellery-replica/
   - Body & UI: `'Jost', sans-serif`
 - **Contact Info**:
   - Address: *Thirunjanam nagar 5rd, Cross Dadagapatti, Salem - 636006*
-  - Support: *+91 90255 74074* / *+91 6381100461*
+  - Support / WhatsApp: *+91 9488551771* / *+91 6381100461*
+  - Admin Email: *gracejana123@gmail.com*
   - Email: *info@premiumweb.in*
 
 ---

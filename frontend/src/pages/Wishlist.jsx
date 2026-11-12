@@ -32,8 +32,8 @@ export default function Wishlist() {
     const productUrl = typeof window !== 'undefined'
       ? `${window.location.origin}/product/${product.slug || product.id}`
       : `https://siva-home-trends.vercel.app/product/${product.slug || product.id}`
-    const message = `Hello SJ Sri Jananin Saree,\n\nI want to order this saree from my wishlist:\n• Product: ${product.name}\n• Price: ${priceText}\n• Product Link: ${productUrl}\n\nPlease confirm availability and dispatch details.`
-    window.open(`https://wa.me/919025574074?text=${encodeURIComponent(message)}`, '_blank')
+    const message = `Hello Siva Home Trends,\n\nI want to order this saree from my wishlist:\n• Product: ${product.name}\n• Price: ${priceText}\n• Product Link: ${productUrl}\n\nPlease confirm availability and dispatch details.`
+    window.open(`https://wa.me/919488551771?text=${encodeURIComponent(message)}`, '_blank')
   }
 
   return (

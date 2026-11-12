@@ -29,8 +29,8 @@ export default function ProductCard({ product, onQuickView }) {
       ? `${window.location.origin}/product/${product.slug || product.id}`
       : `https://siva-home-trends.vercel.app/product/${product.slug || product.id}`
     const priceText = formatPrice(isSale ? product.sale_price : product.price)
-    const msg = `Hello SJ Sri Jananin Saree,\n\nI want to order this saree:\n• Product: ${product.name}\n• Price: ${priceText}\n• Product Link: ${productUrl}\n\nPlease confirm availability and dispatch details.`
-    window.open(`https://wa.me/919025574074?text=${encodeURIComponent(msg)}`, '_blank')
+    const msg = `Hello Siva Home Trends,\n\nI want to order this saree:\n• Product: ${product.name}\n• Price: ${priceText}\n• Product Link: ${productUrl}\n\nPlease confirm availability and dispatch details.`
+    window.open(`https://wa.me/919488551771?text=${encodeURIComponent(msg)}`, '_blank')
   }
 
   const handleToggleWishlist = (e) => {

@@ -34,6 +34,10 @@ api.interceptors.response.use(
 export { api }
 export default api
 
+export const STORE_NAME = 'Siva Home Trends'
+export const STORE_WHATSAPP = '9488551771'
+export const ADMIN_EMAIL = 'gracejana123@gmail.com'
+
 // ─── Exclusive Saree Categories ──────────────────────────────────────────────
 const MOCK_CATEGORIES = [
   { id: 'cat-pure-silk', name: 'Pure Silk Saree', slug: 'pure-silk-saree', count: '85+ items' },
@@ -74,7 +78,7 @@ const MOCK_PRODUCTS = [
         price: 6499,
         sale_price: 4999,
         sku: 'KPS-001-RED',
-        image_url: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80',
+        image_url: 'https://images.unsplash.com/photo-1719266307151-c07fadbee416?auto=format&fit=crop&w=800&q=80',
       },
       {
         id: 'kps-green',
@@ -83,7 +87,7 @@ const MOCK_PRODUCTS = [
         price: 6499,
         sale_price: 4999,
         sku: 'KPS-001-GRN',
-        image_url: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=80',
+        image_url: 'https://images.unsplash.com/photo-1753981031189-27bb7bd1c079?auto=format&fit=crop&w=800&q=80',
       },
       {
         id: 'kps-blue',
@@ -105,8 +109,8 @@ const MOCK_PRODUCTS = [
       },
     ],
     images: [
-      'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1719266307151-c07fadbee416?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1753981031189-27bb7bd1c079?auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1731131400050-b77bddd2fd09?auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80',
     ],
@@ -156,7 +160,7 @@ const MOCK_PRODUCTS = [
         price: 999,
         sale_price: 699,
         sku: 'TC0008-B-GRN',
-        image_url: 'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=80',
+        image_url: 'https://images.unsplash.com/photo-1753981031189-27bb7bd1c079?auto=format&fit=crop&w=800&q=80',
       },
       {
         id: 'v4',
@@ -183,16 +187,16 @@ const MOCK_PRODUCTS = [
         price: 999,
         sale_price: 699,
         sku: 'TC0008-B-RED',
-        image_url: 'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80',
+        image_url: 'https://images.unsplash.com/photo-1719266307151-c07fadbee416?auto=format&fit=crop&w=800&q=80',
       },
     ],
     images: [
       'https://images.unsplash.com/photo-1731131400050-b77bddd2fd09?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1698657169585-0fce00d3ad9c?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1753981031189-27bb7bd1c079?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1719266307151-c07fadbee416?auto=format&fit=crop&w=800&q=80',
       'https://images.unsplash.com/photo-1684961415565-80383f48c0c2?auto=format&fit=crop&w=800&q=80',
-      'https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1698657169585-0fce00d3ad9c?auto=format&fit=crop&w=800&q=80',
+      'https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80',
     ],
     description: 'Fine 80s count handwoven Kanchi cotton saree with contrast temple border, breathable drape, and unstitched matching blouse.',
   },
@@ -419,14 +423,79 @@ const MOCK_PRODUCTS = [
   },
 ]
 
-// ─── API Functions ───────────────────────────────────────────────────────────
+// ─── API Functions & Dynamic Catalog ─────────────────────────────────────────
+
+export function getActiveProducts() {
+  if (typeof window === 'undefined') return MOCK_PRODUCTS
+  try {
+    const stored = localStorage.getItem('siva_catalog_products')
+    if (stored) {
+      const parsed = JSON.parse(stored)
+      if (Array.isArray(parsed) && parsed.length > 0) return parsed
+    }
+  } catch (e) {
+    console.error('Error reading stored products:', e)
+  }
+  return MOCK_PRODUCTS
+}
+
+export function saveAdminProduct(product) {
+  const products = getActiveProducts()
+  let updated
+  const existingIdx = products.findIndex((p) => p.id === product.id)
+  if (existingIdx >= 0) {
+    updated = [...products]
+    updated[existingIdx] = { ...updated[existingIdx], ...product }
+  } else {
+    const newProduct = {
+      ...product,
+      id: product.id || `saree-${Date.now()}`,
+      slug:
+        product.slug ||
+        product.name
+          .toLowerCase()
+          .replace(/[^a-z0-9]+/g, '-')
+          .replace(/(^-|-$)/g, ''),
+      average_rating: product.average_rating || 5.0,
+      review_count: product.review_count || 12,
+    }
+    updated = [newProduct, ...products]
+  }
+  try {
+    localStorage.setItem('siva_catalog_products', JSON.stringify(updated))
+  } catch (e) {
+    console.error('Error saving product to localStorage:', e)
+  }
+  return updated
+}
+
+export function deleteAdminProduct(productId) {
+  const products = getActiveProducts()
+  const updated = products.filter((p) => p.id !== productId)
+  try {
+    localStorage.setItem('siva_catalog_products', JSON.stringify(updated))
+  } catch (e) {
+    console.error('Error deleting product from localStorage:', e)
+  }
+  return updated
+}
+
+export function resetCatalogToDefault() {
+  try {
+    localStorage.removeItem('siva_catalog_products')
+  } catch (e) {
+    console.error('Error resetting catalog:', e)
+  }
+  return MOCK_PRODUCTS
+}
 
 export async function getProducts(params = {}) {
   try {
     const response = await api.get('/products', { params })
-    return response.data?.data || response.data || MOCK_PRODUCTS
+    return response.data?.data || response.data || getActiveProducts()
   } catch (error) {
-    let filtered = [...MOCK_PRODUCTS]
+    const catalog = getActiveProducts()
+    let filtered = [...catalog]
     if (params.category) {
       filtered = filtered.filter(
         (p) =>
@@ -451,8 +520,9 @@ export async function getProductById(id) {
     const response = await api.get(`/products/${id}`)
     return response.data?.data || response.data
   } catch (error) {
-    const found = MOCK_PRODUCTS.find((p) => p.id === id || p.slug === id)
-    return found || MOCK_PRODUCTS[0]
+    const catalog = getActiveProducts()
+    const found = catalog.find((p) => p.id === id || p.slug === id)
+    return found || catalog[0]
   }
 }
 
@@ -461,7 +531,7 @@ export async function getFeaturedProducts() {
     const response = await api.get('/products/featured')
     return response.data?.data || response.data
   } catch (error) {
-    return MOCK_PRODUCTS.filter((p) => p.is_featured).slice(0, 8)
+    return getActiveProducts().filter((p) => p.is_featured).slice(0, 8)
   }
 }
 
@@ -470,7 +540,7 @@ export async function getNewArrivals() {
     const response = await api.get('/products/new-arrivals')
     return response.data?.data || response.data
   } catch (error) {
-    return MOCK_PRODUCTS.filter((p) => p.is_new_arrival).slice(0, 8)
+    return getActiveProducts().filter((p) => p.is_new_arrival).slice(0, 8)
   }
 }
 
@@ -479,7 +549,7 @@ export async function getBestSellers() {
     const response = await api.get('/products/best-sellers')
     return response.data?.data || response.data
   } catch (error) {
-    return MOCK_PRODUCTS.filter((p) => p.is_best_seller).slice(0, 8)
+    return getActiveProducts().filter((p) => p.is_best_seller).slice(0, 8)
   }
 }
 
@@ -488,7 +558,7 @@ export async function getRelatedProducts(id) {
     const response = await api.get(`/products/${id}/related`)
     return response.data?.data || response.data
   } catch (error) {
-    return MOCK_PRODUCTS.filter((p) => p.id !== id && p.slug !== id).slice(0, 4)
+    return getActiveProducts().filter((p) => p.id !== id && p.slug !== id).slice(0, 4)
   }
 }
 
@@ -497,7 +567,7 @@ export async function searchProducts(query) {
     const response = await api.get('/products/search', { params: { q: query } })
     return response.data?.data || response.data
   } catch (error) {
-    return MOCK_PRODUCTS.filter((p) =>
+    return getActiveProducts().filter((p) =>
       p.name.toLowerCase().includes((query || '').toLowerCase())
     )
   }

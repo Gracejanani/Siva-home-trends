@@ -13,7 +13,7 @@ export default function Cart() {
   const finalTotal = subtotal + shipping
 
   const handleOrderViaWhatsApp = () => {
-    let msg = `Hello SJ Sri Jananin Saree,\n\nI would like to place an order for the following items:\n\n`
+    let msg = `Hello Siva Home Trends,\n\nI would like to place an order for the following items:\n\n`
     items.forEach((item, i) => {
       const prod = item.product || item
       const price = item.variation?.sale_price || item.variation?.price || prod.sale_price || prod.price || 0
@@ -21,7 +21,7 @@ export default function Cart() {
       msg += `${i + 1}. ${prod.name}${colorStr} - Qty: ${item.quantity} x ${formatPrice(price)}\n`
     })
     msg += `\nSubtotal: ${formatPrice(subtotal)}\nShipping: ${shipping === 0 ? 'FREE' : formatPrice(shipping)}\nTotal: ${formatPrice(finalTotal)}\n\nPlease confirm availability and payment details.`
-    window.open(`https://wa.me/919025574074?text=${encodeURIComponent(msg)}`, '_blank')
+    window.open(`https://wa.me/919488551771?text=${encodeURIComponent(msg)}`, '_blank')
   }
 
   if (!items || items.length === 0) {

@@ -85,8 +85,8 @@ export default function ProductDetail() {
   const handleWhatsAppOrder = () => {
     const currentUrl = typeof window !== 'undefined' ? window.location.href : `https://siva-home-trends.vercel.app/product/${product.slug || product.id}`
     const colorInfo = selectedVariation?.color ? `• Color: ${selectedVariation.color}\n` : ''
-    const message = `Hello SJ Sri Jananin Saree,\n\nI want to order this saree:\n• Product: ${product.name}\n${colorInfo}• Price: ${formatPrice(currentPrice)}\n• Quantity: ${quantity}\n• Product Link: ${currentUrl}\n\nPlease confirm availability and dispatch details.`
-    const waUrl = `https://wa.me/919025574074?text=${encodeURIComponent(message)}`
+    const message = `Hello Siva Home Trends,\n\nI want to order this saree:\n• Product: ${product.name}\n${colorInfo}• Price: ${formatPrice(currentPrice)}\n• Quantity: ${quantity}\n• Product Link: ${currentUrl}\n\nPlease confirm availability and dispatch details.`
+    const waUrl = `https://wa.me/919488551771?text=${encodeURIComponent(message)}`
     window.open(waUrl, '_blank')
   }
 
@@ -302,7 +302,7 @@ export default function ProductDetail() {
                   <li>Premium handpicked natural silk and cotton fibers</li>
                   <li>Intricate traditional motifs designed for auspicious ceremonies</li>
                   <li>Comfortable fluid drape, skin-friendly soft feel, and breathable weave</li>
-                  <li>Comes in official SJ Sri Jananin Saree luxury packaging box</li>
+                  <li>Comes in official Siva Home Trends luxury packaging box</li>
                 </ul>
               </div>
             )}

@@ -36,7 +36,7 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/health', (req, res) => {
   res.json({
     success: true,
-    message: 'SJ Sri Jananin Saree API is running',
+    message: 'Siva Home Trends API is running',
     environment: process.env.NODE_ENV || 'development',
     timestamp: new Date().toISOString(),
   });
@@ -65,7 +65,7 @@ app.use(errorHandler);
 // ─── Start Server ────────────────────────────────────────────────────────────
 app.listen(PORT, () => {
   console.log('═══════════════════════════════════════════════════');
-  console.log('  SJ Sri Jananin Saree - Backend API Server');
+  console.log('  Siva Home Trends - Backend API Server');
   console.log('═══════════════════════════════════════════════════');
   console.log(`  🚀  Server running on port ${PORT}`);
   console.log(`  🌍  Environment : ${process.env.NODE_ENV || 'development'}`);

@@ -30,10 +30,10 @@ export default function Contact() {
           We’re Here to Help You
         </span>
         <h1 className="font-heading text-4xl sm:text-5xl font-semibold mb-3">
-          Contact SJ Sri Jananin Saree
+          Contact Siva Home Trends
         </h1>
         <p className="text-white/80 text-sm max-w-lg mx-auto">
-          Have queries about saree colors, fabric details, or bridal wedding orders? Reach out to our Salem team.
+          Have queries about saree colors, fabric details, or bridal wedding orders? Reach out to our boutique team.
         </p>
       </div>
 
@@ -60,8 +60,8 @@ export default function Contact() {
               Phone Number
             </h4>
             <p className="text-xs text-brand-muted leading-relaxed">
-              +91 6381100461<br />
-              +91 90255 74074 (WhatsApp)
+              +91 9488551771 (WhatsApp Order Line)<br />
+              +91 6381100461
             </p>
           </div>
 
@@ -73,8 +73,8 @@ export default function Contact() {
               Email Address
             </h4>
             <p className="text-xs text-brand-muted leading-relaxed">
-              info@premiumweb.in<br />
-              sales@srijananin.com
+              gracejana123@gmail.com<br />
+              info@premiumweb.in
             </p>
           </div>
 
@@ -140,7 +140,7 @@ export default function Contact() {
                     type="tel"
                     value={form.phone}
                     onChange={(e) => setForm({ ...form, phone: e.target.value })}
-                    placeholder="+91 90255 74074"
+                    placeholder="+91 9488551771"
                     className="w-full text-sm p-3 border border-brand-border rounded-xl focus:outline-none focus:border-primary"
                   />
                 </div>
@@ -170,7 +170,7 @@ export default function Contact() {
                   <span>{loading ? 'Sending...' : 'Send Message'}</span>
                 </button>
                 <a
-                  href="https://wa.me/919025574074"
+                  href="https://wa.me/919488551771"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-full text-sm font-medium flex items-center gap-2 transition-colors"
@@ -185,7 +185,7 @@ export default function Contact() {
           {/* Embedded Google Map */}
           <div className="rounded-2xl overflow-hidden border border-brand-border/60 shadow-sm h-full min-h-[420px]">
             <iframe
-              title="SJ Sri Jananin Saree Location"
+              title="Siva Home Trends Location"
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3907.56453702175!2d78.1394464!3d11.650882!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3babf1c3f59664eb%3A0x6b1054320b666a46!2sDadagapatti%2C%20Salem%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin"
               width="100%"
               height="100%"

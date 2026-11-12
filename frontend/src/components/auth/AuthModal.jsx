@@ -57,7 +57,7 @@ export default function AuthModal({ isOpen, onClose }) {
           {/* Brand header */}
           <div className="text-center mb-6">
             <span className="text-2xl font-bold font-heading text-primary">
-              SJ Sri Jananin Saree
+              Siva Home Trends
             </span>
             <p className="text-xs text-brand-muted mt-1 uppercase tracking-wider">
               Traditional Handloom Sarees

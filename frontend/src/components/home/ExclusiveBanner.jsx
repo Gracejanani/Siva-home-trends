@@ -33,7 +33,7 @@ export default function ExclusiveBanner() {
             Explore Collection
           </Link>
           <a
-            href="https://wa.me/919025574074"
+            href="https://wa.me/919488551771"
             target="_blank"
             rel="noopener noreferrer"
             className="border-2 border-gold text-gold hover:bg-gold hover:text-white px-8 py-3.5 rounded-full font-body font-medium transition-all duration-300 backdrop-blur-sm"

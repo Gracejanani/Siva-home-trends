@@ -74,21 +74,28 @@ const Footer = () => {
               <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 text-center">
                 {/* Logo */}
                 <div className="flex items-center justify-center gap-3 mb-3">
-                  <div className="w-12 h-12 rounded-full bg-gold flex items-center justify-center">
-                    <span className="text-white font-heading font-bold text-xl">SJ</span>
+                  <div className="w-16 h-16 rounded-2xl bg-white p-1.5 flex items-center justify-center shadow-md">
+                    <img
+                      src="/logo.jpg"
+                      alt="Siva Home Trends"
+                      className="w-full h-full object-contain"
+                      onError={(e) => {
+                        e.target.style.display = 'none';
+                      }}
+                    />
                   </div>
                 </div>
-                <h3 className="font-heading text-xl font-semibold text-white mb-3">
-                  Sri Jananin Saree
+                <h3 className="font-heading text-xl font-bold text-white mb-2">
+                  Siva Home Trends
                 </h3>
-                <p className="text-white/75 text-sm font-body leading-relaxed mb-4">
-                  SJ Sri Jananin Saree brings you an exquisite collection of pure silk, Kanchi cotton, and bridal sarees handwoven for every celebration.
+                <p className="text-white/75 text-xs font-body leading-relaxed mb-4">
+                  Siva Home Trends brings you an exquisite collection of pure silk, Kanchi cotton, and bridal sarees handwoven for every celebration.
                 </p>
                 {/* Social Icons */}
                 <div className="flex items-center justify-center gap-2 flex-wrap">
-                  <SocialButton href="https://facebook.com/srijananinsaree"><FacebookIcon /></SocialButton>
+                  <SocialButton href="https://facebook.com"><FacebookIcon /></SocialButton>
                   <SocialButton href="https://twitter.com"><TwitterIcon /></SocialButton>
-                  <SocialButton href="https://instagram.com/srijananinsaree"><InstagramIcon /></SocialButton>
+                  <SocialButton href="https://instagram.com"><InstagramIcon /></SocialButton>
                   <SocialButton href="https://pinterest.com"><PinterestIcon /></SocialButton>
                   <SocialButton href="https://linkedin.com"><LinkedInIcon /></SocialButton>
                 </div>
@@ -104,9 +111,10 @@ const Footer = () => {
                 {[
                   { label: 'Home', to: '/' },
                   { label: 'About Us', to: '/about' },
-                  { label: 'Shop', to: '/shop' },
+                  { label: 'Shop Sarees', to: '/shop' },
                   { label: 'Track Order', to: '/track-order' },
                   { label: 'Contact Us', to: '/contact' },
+                  { label: 'Owner Admin', to: '/admin' },
                 ].map((link) => (
                   <li key={link.to}>
                     <Link
@@ -200,9 +208,9 @@ const Footer = () => {
                 <li className="flex items-center gap-3">
                   <PhoneIconSmall />
                   <div>
-                    <p className="text-white/60 text-xs font-body">Customer Support</p>
-                    <a href="tel:+919025574074" className="text-white/75 hover:text-white text-sm font-body transition-colors">
-                      +91 90255 74074
+                    <p className="text-white/60 text-xs font-body">WhatsApp / Support</p>
+                    <a href="tel:+919488551771" className="text-white/75 hover:text-white text-sm font-body transition-colors font-semibold">
+                      +91 9488551771
                     </a>
                   </div>
                 </li>
@@ -216,12 +224,8 @@ const Footer = () => {
       <div className="bg-primary border-t border-white/20 py-4">
         <div className="container mx-auto px-4 text-center">
           <p className="text-white/70 text-sm font-body">
-            Designed by{' '}
-            <a href="https://premiumweb.in" target="_blank" rel="noopener noreferrer" className="text-gold hover:text-white transition-colors font-medium">
-              Premiumweb
-            </a>
-            {' '}© All Rights Reserved by{' '}
-            <span className="text-white font-medium">SJ Sri Jananin Saree</span>
+            © 2026 All Rights Reserved by{' '}
+            <span className="text-white font-semibold">Siva Home Trends</span>
           </p>
         </div>
       </div>

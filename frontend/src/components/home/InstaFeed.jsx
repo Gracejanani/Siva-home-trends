@@ -16,13 +16,13 @@ export default function InstaFeed() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center mb-8">
         <div className="inline-flex items-center gap-2 text-primary font-semibold text-sm mb-2">
           <Instagram size={18} />
-          <span>@srijananinsaree</span>
+          <span>@sivahometrends</span>
         </div>
         <h2 className="font-heading text-3xl sm:text-4xl text-brand-dark font-semibold">
           Follow Us On Instagram
         </h2>
         <p className="text-brand-muted text-sm mt-1">
-          Tag #SriJananinSaree to be featured on our official handle
+          Tag #SivaHomeTrends to be featured on our official handle
         </p>
       </div>
 

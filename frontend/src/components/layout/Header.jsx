@@ -8,10 +8,11 @@ import {
   X,
   Phone,
   ChevronDown,
+  ShieldCheck,
 } from 'lucide-react'
 import { useWishlist } from '../../context/WishlistContext'
 import { useAuth } from '../../context/AuthContext'
-import { searchProducts } from '../../services/api'
+import { searchProducts, STORE_NAME, STORE_WHATSAPP } from '../../services/api'
 
 const NAV_LINKS = [
   { label: 'Home', to: '/' },
@@ -106,8 +107,8 @@ export default function Header() {
       {/* Top announcement bar */}
       <div className="bg-primary text-white text-xs font-body text-center py-2 px-4 hidden md:block">
         <span>🌟 Free shipping on orders above ₹999 | </span>
-        <a href="tel:+919025574074" className="underline hover:no-underline">
-          📞 +91 90255 74074
+        <a href="tel:+919488551771" className="underline hover:no-underline font-semibold">
+          📞 +91 9488551771
         </a>
         <span> | Cash on Delivery Available</span>
       </div>
@@ -130,13 +131,23 @@ export default function Header() {
             </button>
 
             {/* Logo */}
-            <Link to="/" className="flex flex-col items-center md:items-start">
-              <span className="font-heading text-xl md:text-2xl text-primary font-bold leading-tight">
-                SJ Sri Jananin
-              </span>
-              <span className="font-body text-xs text-gold tracking-widest uppercase">
-                Exclusive Sarees
-              </span>
+            <Link to="/" className="flex items-center gap-2 sm:gap-3">
+              <img
+                src="/logo.jpg"
+                alt="Siva Home Trends"
+                className="h-10 sm:h-12 md:h-14 w-auto object-contain rounded-md"
+                onError={(e) => {
+                  e.target.style.display = 'none'
+                }}
+              />
+              <div className="flex flex-col">
+                <span className="font-heading text-lg sm:text-xl md:text-2xl text-primary font-bold leading-tight tracking-tight">
+                  {STORE_NAME}
+                </span>
+                <span className="font-body text-[10px] sm:text-xs text-gold tracking-widest uppercase font-semibold">
+                  Exclusive Sarees
+                </span>
+              </div>
             </Link>
 
             {/* Desktop nav */}
@@ -275,7 +286,7 @@ export default function Header() {
 
               {/* WhatsApp Order Button */}
               <a
-                href="https://wa.me/919025574074?text=Hi%20SJ%20Sri%20Jananin%20Saree%2C%20I%20would%20like%20to%20order%20sarees."
+                href={`https://wa.me/91${STORE_WHATSAPP}?text=Hi%20${encodeURIComponent(STORE_NAME)}%2C%20I%20would%20like%20to%20order%20sarees.`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-emerald-50 hover:bg-emerald-100 text-emerald-700 font-semibold text-xs transition-all shadow-sm border border-emerald-200/60"
@@ -288,13 +299,14 @@ export default function Header() {
                 <span className="hidden sm:inline">WhatsApp Order</span>
               </a>
 
-              {/* Account */}
+              {/* Account / Admin Portal */}
               <Link
-                to="/account"
-                className="p-1.5 text-brand-body hover:text-primary transition-colors"
-                aria-label="Account"
+                to="/admin"
+                className="p-1.5 text-brand-body hover:text-primary transition-colors flex items-center gap-1"
+                aria-label="Admin Portal"
+                title="Admin Portal"
               >
-                <User size={20} />
+                <ShieldCheck size={20} />
               </Link>
             </div>
           </div>
@@ -334,12 +346,22 @@ export default function Header() {
               )}
               {/* Mobile contact */}
               <a
-                href="tel:+919025574074"
+                href={`tel:+91${STORE_WHATSAPP}`}
                 className="flex items-center gap-2 px-2 py-2.5 font-body text-sm text-primary font-medium mt-2"
               >
                 <Phone size={16} />
-                +91 90255 74074
+                +91 {STORE_WHATSAPP}
               </a>
+
+              {/* Admin Portal shortcut for store owner on mobile */}
+              <Link
+                to="/admin"
+                onClick={closeMobile}
+                className="flex items-center gap-2 px-2 py-2.5 font-body text-xs font-semibold text-emerald-700 bg-emerald-50 rounded-lg transition-colors mt-2"
+              >
+                <ShieldCheck size={16} />
+                <span>Store Owner Admin Portal</span>
+              </Link>
             </nav>
           </div>
         )}

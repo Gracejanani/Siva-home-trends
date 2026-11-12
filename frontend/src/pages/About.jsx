@@ -43,7 +43,7 @@ export default function About() {
                 “Celebrate Every Moment with Beautiful Handcrafted Sarees.”
               </h2>
               <p className="text-brand-body text-sm md:text-base leading-relaxed">
-                SJ Sri Jananin Saree brings you an exquisite collection of handloom sarees to make every occasion special. From traditional bridal Kanchipuram silk to breathable daily Kanchi cottons, we offer choices for weddings, festivals, family functions, and everyday wear.
+                Siva Home Trends brings you an exquisite collection of handloom sarees to make every occasion special. From traditional bridal Kanchipuram silk to breathable daily Kanchi cottons, we offer choices for weddings, festivals, family functions, and everyday wear.
               </p>
               <p className="text-brand-body text-sm md:text-base leading-relaxed">
                 Rooted in Dadagapatti, Salem, we work directly with experienced master weavers from Kanchipuram, Arani, and Salem to craft genuine pure silks, soft silks, and cottons that preserve our rich cultural roots.
